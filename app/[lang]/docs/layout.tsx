@@ -25,14 +25,14 @@ export default async function Layout({
       sidebar={{
         tabs: [
           {
-            title: 'v1',
-            url: `${prefix}/docs/v1`,
-            // make the tab visible on “/docs” too (optional default)
-            urls: new Set([`${prefix}/docs`, `${prefix}/docs/v1`]),
+            title: 'v1.0.0',
+            url: `${prefix}/docs/1.0.0`,
+            // make the tab visible on "/docs" too (optional default)
+            urls: new Set([`${prefix}/docs`, `${prefix}/docs/1.0.0`]),
           },
           {
-            title: 'v2',
-            url: `${prefix}/docs/v2`,
+            title: 'v0.1.27',
+            url: `${prefix}/docs/0.1.27`,
           },
         ],
       }}
