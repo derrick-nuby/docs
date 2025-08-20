@@ -27,27 +27,6 @@ export function baseOptions(): BaseLayoutProps {
       ),
     },
     links: [
-      {
-        text: 'Home',
-        url: '/',
-      },
-      {
-        text: 'Docs',
-        url: '/docs',
-      },
-      {
-        text: 'API',
-        url: '/api',
-      },
-      {
-        text: 'Blog',
-        url: '/blog',
-      },
-      {
-        type: 'button',
-        text: 'Get Started',
-        url: '/get-started',
-      },
     ],
   };
 }
