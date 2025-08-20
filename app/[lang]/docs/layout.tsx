@@ -1,8 +1,8 @@
+// app/[lang]/docs/layout.tsx  (Server Component)
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { baseOptions } from '@/app/layout.config';
 import { source } from '@/lib/source';
-import { i18n } from '@/lib/i18n'; // your i18n config
 
 export default async function Layout({
   params,
@@ -13,28 +13,33 @@ export default async function Layout({
 }) {
   const { lang } = await params;
 
-  // If you hide the prefix for the default locale, omit it.
-  const hideDefault = (i18n as any).hidePrefix === 'default-locale'; // name per docs
-  const isDefault = lang === i18n.defaultLanguage;
-  const prefix = hideDefault && isDefault ? '' : `/${lang}`;
-
   return (
     <DocsLayout
-      tree={source.pageTree[lang]}           // i18n-aware tree
-      {...baseOptions(lang)}                 // pass locale into UI
+      tree={source.pageTree[lang]}     // i18n-aware page tree
+      {...baseOptions(lang)}
       sidebar={{
-        tabs: [
-          {
-            title: 'v1.0.0',
-            url: `${prefix}/docs/1.0.0`,
-            // make the tab visible on "/docs" too (optional default)
-            urls: new Set([`${prefix}/docs`, `${prefix}/docs/1.0.0`]),
+        tabs: {
+          transform(option, node) {
+            const meta = source.getNodeMeta(node);
+            if (!meta || !node.icon) return option;
+
+            // Use first path segment as a key (e.g., "1.0.0")
+            const seg = meta.path.split('/')[0];
+            const color = `var(--${seg}-color, var(--color-fd-foreground))`;
+
+            return {
+              ...option,
+              icon: (
+                <div
+                  className="[&_svg]:size-full rounded-lg size-full text-(--tab-color) max-md:bg-(--tab-color)/10 max-md:border max-md:p-1.5"
+                  style={{ '--tab-color': color } as React.CSSProperties}
+                >
+                  {node.icon}
+                </div>
+              ),
+            };
           },
-          {
-            title: 'v0.1.27',
-            url: `${prefix}/docs/0.1.27`,
-          },
-        ],
+        },
       }}
     >
       {children}

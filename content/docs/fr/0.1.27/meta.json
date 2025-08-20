@@ -1,7 +1,5 @@
 {
-  "title": "Documentation v0.1.27",
-  "pages": [
-    "index",
-    "test"
-  ]
+  "title": "v0.1.27",
+  "root": true,
+  "icon": "Book"
 }
