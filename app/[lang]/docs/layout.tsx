@@ -16,7 +16,7 @@ export default async function Layout({
   return (
     <DocsLayout
       tree={source.pageTree[lang]}     // i18n-aware page tree
-      {...baseOptions(lang)}
+      {...baseOptions()}
       sidebar={{
         tabs: {
           transform(option, node) {

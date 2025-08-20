@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { CheckCircle, Database, Shield, Globe, TrendingUp, Users, Phone, Mail } from "lucide-react";
 import "./../../index.css";
+import Link from "next/link";
 
 
 export default function HomePage() {
@@ -82,23 +83,12 @@ export default function HomePage() {
                   Next-Generation Health Financing
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
-                  Powering Performance-Based Financing for Stronger Health Systems
+                  Performance-Based Financing
                 </h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   A digital platform that transforms how health data is collected, verified, and funded — tailored for
                   low and middle-income countries.
                 </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
-                  Learn How It Works
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 bg-transparent">
-                  Partner with Us
-                </Button>
-                <Button size="lg" variant="secondary" className="text-lg px-8">
-                  Request a Demo
-                </Button>
               </div>
             </div>
             <div className="relative">
@@ -134,6 +124,17 @@ export default function HomePage() {
                 </div>
               </Card>
             </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 mt-20">
+            <Button size="lg" className="text-lg px-8">
+              Learn How It Works
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8 bg-transparent">
+              Partner with Us
+            </Button>
+            <Button size="lg" variant="secondary" className="text-lg px-8">
+              Request a Demo
+            </Button>
           </div>
         </div>
       </section>
@@ -282,7 +283,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold">Built for National Programs and Donor Flexibility</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you're a country government piloting PBF in a few districts or a donor agency funding
+                Whether you&apos;re a country government piloting PBF in a few districts or a donor agency funding
                 results-based health initiatives across regions — our platform adapts to your scale.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
@@ -399,7 +400,7 @@ export default function HomePage() {
                   <Card className="p-8 text-center">
                     <CardContent className="pt-6">
                       <blockquote className="text-xl italic mb-6 text-muted-foreground">
-                        "{testimonial.quote}"
+                        &quot;{testimonial.quote}&quot;
                       </blockquote>
                       <div className="space-y-2">
                         <p className="font-semibold text-lg">{testimonial.author}</p>
@@ -477,9 +478,9 @@ export default function HomePage() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-6 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Let's Build Stronger Health Systems Together</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Let&apos;s Build Stronger Health Systems Together</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We're ready to scale. Are you ready to join us? Let's discuss how we can tailor the PBF App to your
+              We&apos;re ready to scale. Are you ready to join us? Let&apos;s discuss how we can tailor the PBF App to your
               country, your program, or your funding initiative.
             </p>
           </div>
@@ -507,12 +508,12 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
                 <p className="text-muted-foreground mb-6">
-                  Send us your questions and requirements. We'll respond within 24 hours
+                  Send us your questions and requirements. We&apos;ll respond within 24 hours
                 </p>
                 <Button size="lg" variant="outline" className="w-full bg-transparent">
-                  <a href="/contact" className="w-full">
+                  <Link href="/contact" className="w-full">
                     Contact Us
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
