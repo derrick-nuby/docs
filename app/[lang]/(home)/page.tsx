@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { CheckCircle, Database, Shield, Globe, TrendingUp, Users, Phone, Mail } from "lucide-react";
-import "./../../index.css";
 import Link from "next/link";
 
 
